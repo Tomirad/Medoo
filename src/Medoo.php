@@ -582,6 +582,9 @@ class Medoo
         }
 
         foreach ($map as $key => $value) {
+            if ( is_numeric( $key ) ) {
+                $key += 1;
+            }
             $statement->bindValue($key, $value[0], $value[1]);
         }
 
